@@ -5,14 +5,139 @@ body
   height: 100vh
   width: 100vw
   background: linear-gradient(#1c8dff, #85eaef)
-
+//ID's
 #ground
   height: $groundTileDim
   width: 100vw
   position: fixed
+  z-index: 10
   left: 0
   bottom: 0
   background:
     image: url("imgs/groundTile.jpg")
     repeat: repeat-x
     size: $groundTileDim
+#c1
+  animation:
+    delay: 1s
+
+  left: 400px
+  height: 200px
+  width: 200px
+  background:
+    size: 200px
+#c2
+  animation:
+    delay: 2.5s
+  left: 800px
+  top: -105px
+  height: 400px
+  width: 400px
+  background:
+    size: 400px
+  z-index: 1
+
+#blockRow
+  height: 100px
+  width: 600px
+  position: relative
+  top: -225px
+  left: 175px
+  display: flex
+  justify-items: center
+#shawty
+
+  position: relative
+  top: -800px
+  left: 1000px
+  z-index: 2
+#chompy
+  height: 400px
+  width: 200px
+  z-index: -2
+  background:
+    image: url("imgs/flower_1.png")
+    size: 200px 400px
+  position: relative
+  top: -1400px
+  left: 1425px
+  animation:
+    name: plantman, plantEater
+    duration: 2s, .5s
+    iteration-count: infinite
+    timing-function: ease-in, step-end
+
+
+
+//CLASSES
+.cloud
+  height: 125px
+  width: 125px
+  background:
+    image: url("imgs/cloudTile.png")
+    repeat: no-repeat
+    size: 125px
+  position: relative
+  top: 50px
+  left: 150px
+  animation:
+    name: movingCloud
+    duration: 10s
+    iteration-count: infinite
+    timing-function: ease-in-out
+.qBlock
+  height: 100px
+  width: 100px
+  transition: all 500s ease-in-out
+  background:
+    image: url("imgs/questionBlockTile.png")
+    size: 100px
+  &:hover
+    background:
+      image: url("img/brickBlockTile.png")
+
+.bBlock
+  height: 100px
+  width: 100px
+  background:
+    image: url("imgs/brickBlockTile.png")
+    size: 100px
+.pipe
+  height: 500px
+  width: 250px
+  z-index: 1px
+  background:
+    image: url("imgs/pipeTile.png")
+    size: 250px 500px
+  position: relative
+  top: -500px
+  left: 1400px
+//ANIMATIONS
+
+@keyframes movingCloud
+  0%
+    transform: translateY(0px)
+  50%
+    transform: translateY(50px)
+  100%
+    transform: translateY(0px)
+@keyframes plantman
+  0%
+    transform: translateY(0px)
+  50%
+    transform: translateY(-400px)
+  100%
+    transform: translatY(0px)
+@keyframes plantEater
+  0%
+    background-image: url("imgs/flower_1.png")
+  20%
+    background-image: url("imgs/flower_2.png")
+  40%
+    background-image: url("imgs/flower_1.png")
+  60%
+    background-image: url("imgs/flower_2.png")
+  80%
+    background-image: url("imgs/flower_1.png")
+  100%
+    background-image: url("imgs/flower_2.png")
