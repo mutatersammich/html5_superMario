@@ -1,4 +1,18 @@
+
+$groundTileDim: 128px
+
 body
   height: 100vh
   width: 100vw
   background: linear-gradient(#1c8dff, #85eaef)
+
+#ground
+  height: $groundTileDim
+  width: 100vw
+  position: fixed
+  left: 0
+  bottom: 0
+  background:
+    image: url("imgs/groundTile.jpg")
+    repeat: repeat-x
+    size: $groundTileDim

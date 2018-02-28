@@ -2,3 +2,13 @@ body {
   height: 100vh;
   width: 100vw;
   background: linear-gradient(#1c8dff, #85eaef); }
+
+#ground {
+  height: 128px;
+  width: 100vw;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-image: url("imgs/groundTile.jpg");
+  background-repeat: repeat-x;
+  background-size: 128px; }
